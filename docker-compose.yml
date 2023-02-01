@@ -1,0 +1,36 @@
+version: '2.2'
+services:
+ mysqldb:
+  container_name: hotel
+  image: mysql:latest
+  volumes:
+   - ./db-data/db:/var/lib/mysql
+  ports:
+   - '3307:3306'
+  hostname: hoteldb
+  environment:
+   MYSQL_DATABASE: ${DB_NAME}
+   MYSQL_USER: ${DB_USER}
+   MYSQL_PASSWORD: ${DB_PASSWORD}
+   MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+  command:
+    --sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+  healthcheck:
+    test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+    timeout: 10s
+    retries: 10
+
+ app:
+   depends_on:
+      mysqldb:
+             condition: service_healthy
+  
+   build: .
+   restart: always
+   ports:
+      - '4000:3000'
+   stdin_open: true
+   tty: true
+
+volumes: 
+  db:
