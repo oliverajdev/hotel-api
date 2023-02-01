@@ -2,7 +2,7 @@ const bookingController = require('../controllers/bookingController')
 const { Client, Booking } = require('../database/models')
 
 module.exports = {
-    createClient: async (first_name,last_name,adress,nationality,phone_number,email) => {
+    createClient: async (first_name,last_name,date,adress,nationality,phone_number,email) => {
 
         const [client,created] = await  Client.findOrCreate({
             where:{

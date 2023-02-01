@@ -2,7 +2,7 @@ const { ErrorObject } = require("../helpers/error")
 const { endpointResponse } = require("../helpers/success")
 const { createBilling } = require("../services/billingService")
 const { setPayment, findBookingById } = require("../services/bookingService")
-const { createPayment } = require("../services/paymentService")
+const { createPayment, findAllPayment_methods } = require("../services/paymentService")
 
 module.exports = {
     create: async (req,res,next) => {
@@ -41,5 +41,20 @@ module.exports = {
             
         }
 
+    },
+    findPayment_methods: async (req,res,next) => {
+        try{
+
+            const payment_methods = await findAllPayment_methods()
+
+            endpointResponse({
+                res,
+                message:'Request successfully',
+                body: payment_methods
+            })
+
+        }catch(err){
+            next(err)
+        }
     }
 }

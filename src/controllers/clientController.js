@@ -17,6 +17,7 @@ module.exports = {
                 email
             } = req.body
 
+
             const client = await createClient( 
                 first_name,
                 last_name,

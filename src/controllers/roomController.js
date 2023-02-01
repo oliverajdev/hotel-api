@@ -1,3 +1,4 @@
+const { query } = require("express");
 const { findRoomById, findRoomAll, findRoomByDate } = require("../services/roomServices")
 
 
@@ -31,7 +32,8 @@ module.exports = {
     },
     findByDates: async (req,res,next) => {
         try{
-            if(!Object.keys(req.query).length) return next()
+            
+            if(!(req.query.check_in && req.query.check_out)) return next()
             const {check_in,check_out} = req.query;
 
 
