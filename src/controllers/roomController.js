@@ -1,5 +1,6 @@
-const { query } = require("express");
-const { findRoomById, findRoomAll, findRoomByDate } = require("../services/roomServices")
+const { ErrorObject } = require("../helpers/error");
+const { findRoomById, findRoomAll, findRoomByDate } = require("../services/roomServices");
+const { verifyDate} = require("../utils/handlerDate");
 
 
 
@@ -34,6 +35,12 @@ module.exports = {
         try{
             
             if(!(req.query.check_in && req.query.check_out)) return next()
+
+            const  switchDate = verifyDate(new Date(req.query.check_in),new Date(req.query.check_out));
+
+            if(!switchDate) throw new ErrorObject('Invalid Dates',400);
+
+
             const {check_in,check_out} = req.query;
 
 

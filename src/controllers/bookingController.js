@@ -16,7 +16,7 @@ module.exports = {
                 Payment_id=null
             } = req.body
 
-            
+
 
             check_in = new Date(check_in);
 
@@ -30,7 +30,7 @@ module.exports = {
 
             const switchCheck =  checkDate(roomChecks,check_in,check_out)
 
-            if(!switchCheck) throw new ErrorObject('Recerved date',400)
+            if(!switchCheck) throw new ErrorObject('Invalid dates',400)
 
             const booking = await createBooking(check_in,check_out,Client_id,Room_detail_id,Status_id,Payment_id);
             
