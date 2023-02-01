@@ -1,0 +1,53 @@
+GET  http://localhost:4000/room?check_out=2023/04/10&check_in=2023/04/04
+
+
+
+POST http://localhost:4000/booking
+
+{
+  "check_in": "2023/02/02",
+  "check_out": "2023/02/10",
+  "Client_id":1,
+  "Room_detail_id":
+  
+}
+
+POST http://localhost:4000/payment
+
+{
+  "first_name": "asdsa",
+  "last_name": "asdas",
+  "adress": "aasds",
+  "location": "asdas",
+  "phone_number":"1414132",
+  "zip_code":3500,
+  "amount":1240,
+  "Payment_method_id": 1,
+  "Booking_id": 1
+  }
+
+
+GET http://localhost:4000/payment/methods
+
+
+
+PUT http://localhost:4000/booking
+
+{
+  "Booking_id" : 1
+}
+
+
+
+POST http://localhost:4000/create
+
+{
+  "first_name": "Jack",
+  "last_name": "Nicholson",
+  "date": "22/04/1934",
+  "adress": "calle falsa 123",
+  "nationality": "United States",
+  "phone_number": "1313456",
+  "email": "jacknic@email.com"
+
+}
