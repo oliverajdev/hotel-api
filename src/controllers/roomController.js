@@ -1,4 +1,5 @@
 const { ErrorObject } = require("../helpers/error");
+const { endpointResponse } = require("../helpers/success");
 const { findRoomById, findRoomAll, findRoomByDate } = require("../services/roomServices");
 const { verifyDate} = require("../utils/handlerDate");
 
@@ -11,7 +12,11 @@ module.exports = {
 
             const room = await findRoomById(id);
 
-            res.status(200).json(room);
+            endpointResponse({
+                res,
+                message:'Request succesfully',
+                body: room
+            })
 
         
         }catch(err){
@@ -25,7 +30,11 @@ module.exports = {
 
             const rooms = await findRoomAll();
 
-            res.status(200).json(rooms);
+            endpointResponse({
+                res,
+                message:'Request succesfully',
+                body: rooms
+            })
 
         }catch(err){
             next(err);
@@ -46,7 +55,11 @@ module.exports = {
 
             const rooms = await findRoomByDate(check_in,check_out);
 
-            res.status(200).json(rooms)
+            endpointResponse({
+                res,
+                message:'Request succesfully',
+                body: rooms
+            })
 
         }catch(err){
             next(err)

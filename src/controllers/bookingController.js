@@ -58,7 +58,7 @@ module.exports = {
             endpointResponse({
                 res,
                 code:201,
-                message:'Created successfully',
+                message:'Booking removed',
             })
 
         }catch(err){

@@ -1,8 +1,9 @@
 
 module.exports = { 
  verifyDate: (check_in,check_out) => {
-   const today = new Date()
-    if((check_out.getTime() > check_in.getTime()) && check_in.getTime() > today.getTime() ) return true
+   let today = new Date().toLocaleDateString()
+   today = new Date(today)
+    if((check_out.getTime() > check_in.getTime()) && check_in.getTime()  >= today.getTime() ) return true
     return false
 
 },
