@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "ee6e2132-2be3-4352-b6f9-f335ca46de3c",
+		"name": "Hotel-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20405638"
+	},
+	"item": [
+		{
+			"name": "http://localhost:4000/room?check_out=2023/04/10&check_in=2023/04/04",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/room?check_out=2023/04/10&check_in=2023/04/04",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"room"
+					],
+					"query": [
+						{
+							"key": "check_out",
+							"value": "2023/04/10"
+						},
+						{
+							"key": "check_in",
+							"value": "2023/04/04"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST http://localhost:4000/booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"check_in\": \"2023/02/02\",\r\n  \"check_out\": \"2023/02/10\",\r\n  \"Client_id\":1,\r\n  \"Room_detail_id\": 1\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "POST http://localhost:4000/booking",
+					"protocol": "POST http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"first_name\": \"asdsa\",\r\n  \"last_name\": \"asdas\",\r\n  \"adress\": \"aasds\",\r\n  \"location\": \"asdas\",\r\n  \"phone_number\":\"1414132\",\r\n  \"zip_code\":3500,\r\n  \"amount\":1240,\r\n  \"Payment_method_id\": 1,\r\n  \"Booking_id\": 1\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/payment/methods\n",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/payment/methods\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"payment",
+						"methods\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/booking",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Booking_id\" : 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST http://localhost:4000/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"first_name\": \"Jack\",\r\n  \"last_name\": \"Nicholson\",\r\n  \"date\": \"22/04/1934\",\r\n  \"adress\": \"calle falsa 123\",\r\n  \"nationality\": \"United States\",\r\n  \"phone_number\": \"1313456\",\r\n  \"email\": \"jacknic@email.com\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/client/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/client/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"client",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/room",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/room",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"room"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
