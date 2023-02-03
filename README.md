@@ -56,7 +56,7 @@ Ahora obtenemos los ids de los metodos de pago para elegir una opcion
 
 ### POST /payment
 
-Procedemos a pagar con el id de la reserva, id de metodo de pago, el monto ya obtenidos de los detalles de la habitacion 
+Procedemos a pagar con los datos de facturacion, id de la reserva, id de metodo de pago, el monto ya obtenidos de los detalles de la habitacion 
 
 ![image](https://user-images.githubusercontent.com/86572008/216049229-a7a9a33f-40a2-4bdd-9e4f-1f25c8dfb4ee.png)
 
