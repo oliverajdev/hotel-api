@@ -32,8 +32,8 @@ module.exports = {
                 model:Booking,
                 where: {
                     [Op.and]: [
-                      { check_in:{[Op.gt]:check_in} },
-                      { check_out:{[Op.lt]:check_out} },
+                      { check_in:{[Op.gt]:check_out} },
+                      { check_out:{[Op.lt]:check_in} },
                       { Status_id: {[Op.ne]: 3}}
                     ],
                     
