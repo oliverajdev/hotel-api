@@ -45,7 +45,7 @@ module.exports = {
         const reservedRoomIds = reservedRoom.map( e => e.dataValues.id)
         return await Room_detail.findAll({
             where: {
-                id: {[Op.ne]: reservedRoomIds}
+                id:  {[Op.notIn]: reservedRoomIds}
             }
         })
 
