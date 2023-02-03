@@ -95,7 +95,7 @@ podemos crear el cliente y obtener el id de cliente
 
 
 
-
+Nota: no permite fechas inferiores al dia actual para ingreesar en las querys o en el formulario de reserva
 
 
 
